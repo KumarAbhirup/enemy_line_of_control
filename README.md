@@ -1,6 +1,6 @@
-# `📦 p5.js Scaffold`
+# `🔥 Enemy LOC`
 
-Start your day with some p5.js juice!
+Shoot those beyond the line!
 
 ## 😃 Getting Started
 
@@ -10,37 +10,27 @@ I've provided comments in the most important parts of the code, so you don't get
 
 Feel free to modify anything, upgrade the game, add more stuff!
 
+## 🖥️ Spin up the game locally
+
+- Run
+
+```bash
+$ git clone <YOUR_REMIXED_REMOTE_URL> <PROJECT_NAME>
+$ cd <PROJECT_NAME>/frontend
+$ npm i
+$ npm start
+```
+
+- Visit [https://localhost:8080](https://localhost:8080)
+
 ## 💥 About The Game
 
-Write about your game here.
+- Shoot the enemies with the shooter!
+- Don't let them touch the Line of Control
 
 ## ⚒️ Customizations
 
-Things that can be customized:
-
-### Colors
-
-- Many colors are already set for you. Just use them in code.
-
-- Color names here.
-
-### Images
-
-- Many images are already set for you. Just use them in code.
-
-- Put all your Image names here.
-
-### Sounds
-
-- Many sounds are already set for you. Just use them in code.
-
-- Put your Sound names here.
-
-### Game Settings
-
-- Many strings are already set for you. Just use them in code.
-
-- Put your game settings here.
+To see what stuffs can be customised, take a look in Koji VCC.
 
 ## 📖 Notes
 
@@ -50,33 +40,12 @@ Few Koji Visual Customization Controls are already there for you to use. They we
 
 ## ☕ For developers
 
-=======
 ### For setting scores, use the following code snippet 👇
 
 ```js
 window.setScore(score)
 window.setAppView('setScore')
 ```
-
-### For using the `starter-template-react` branch
-
-- Remix the p5.js Scaffold
-
-- Run the following commands in the terminal
-
-```bash
-$ git checkout starter-template-react
-$ git merge --strategy=ours master
-$ git checkout master
-$ git merge starter-template-react
-$ git commit -m "The Mega Merge"
-$ git branch -d starter-template-react
-$ git push origin master
-```
-
-- If something doesn't work after following these steps, kill all processes and do `$ npm i` in both the `frontend` and `backend` directories.
-
-- Then start both the containers again. Take a look at `package.json` to see what command starts the dev server.
 
 ### Develop locally
 
@@ -133,6 +102,22 @@ $ git push github master # <- only if you also maintain a GitHub Repository
 
 - To officially deploy your project, you can **Publish the project using the Koji GUI**.
 
+## 🤙 Wanna contribute❓
+
+Just shoot a Pull Request at [the official GitHub repository of this game 📦](https://github.com/KumarAbhirup/enemy_line_of_control)
+
+Or follow me and DM on [Twitter @kumar_abhirup](https://twitter.com/kumar_abhirup) 🙌
+
+Or hit me up on Koji's official Discord server, username: kumar_abhirup 🌱
+
+## 📝 Licence
+
+**GPL © [Kumar Abhirup](https://kumar.now.sh)**
+
+_Follow me 👋 **on Twitter**_ →   [![Twitter](https://img.shields.io/twitter/follow/kumar_abhirup.svg?style=social&label=@kumar_abhirup)](https://twitter.com/kumar_abhirup)
+
 ## Credits for assets
 
-Put your assets credit here.
+OpenGameArt 👉 [https://opengameart.org](https://opengameart.org)
+
+If you see your assets being used without your permission, DM me for getting credited or remove the asset altogether!
