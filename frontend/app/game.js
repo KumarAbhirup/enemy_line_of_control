@@ -23,7 +23,25 @@ function gamePlay() {
     drawTimer()
   }
 
-  // InGame UI
+  /* InGame UI */
+
+  // Show them all
+  shooter.show()
+  lineOfControl.show()
+
+  // If the bullet is in the air, don't move the shooter
+  if (!shooter.shooting) {
+    shooter.rotate(
+      map(
+        mouseX,
+        shooterRotateLimit,
+        width - shooterRotateLimit,
+        PI / -3.5,
+        PI / 3.5,
+        true
+      )
+    )
+  }
 
   // Score draw
   const scoreX = width - objSize / 2

@@ -2,33 +2,18 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 
+// NOTE: Turn this.shooting to false for enabling shooter to shoot again.
 class Shooter extends GameObject {
   /**
-   * @description Running this function shoots the balloon.
+   * @description Running this function shoots the bullet.
    */
   shoot = () => {
-    shootingBalloon.shooting = true
-    shootingBalloons.push(shootingBalloon)
+    this.shooting = true
+    bullets.push(new Bullet())
   }
 
-  // brings another balloon after shooting one
+  // YOU MIGHT NOT NEED THIS FUNCTION! It is to bring another bullet after shooting one
   reload = () => {
-    const balloonType = random(balloonTypes)
-
-    shootingBalloon = null
-    shootingBalloon = new Balloon(
-      {
-        x: width / 2,
-        y: height - objSize * 1.6,
-      },
-      { radius: 0.7 * objSize },
-      {
-        shape: 'circle',
-        rotate: false,
-        shootingBalloon: true,
-        type: balloonType.type,
-        ...getBalloonSettings(balloonType.color, balloonType.image),
-      }
-    )
+    // this.shooting = false
   }
 }

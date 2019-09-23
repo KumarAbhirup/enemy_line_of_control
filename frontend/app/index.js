@@ -18,8 +18,13 @@ let floatingTexts = []
 let particles = []
 
 // Game Objects (READ-ONLY)
+let shooter
+let lineOfControl
+let enemies = []
+let bullets = []
 
 // Game Stuffs (READ-N-WRITE)
+let shooterRotateLimit
 
 // Buttons
 let playButton
@@ -38,6 +43,10 @@ let score = 0
 let comboTexts = []
 
 // Images
+let imgShooter
+let imgBullet
+let imgEnemies = []
+
 let imgLife
 let imgBackground
 
@@ -96,6 +105,12 @@ function preload() {
   }
 
   // Load images
+  imgShooter = loadImage(Koji.config.images.shooterImage)
+  imgBullet = loadImage(Koji.config.images.bulletImage)
+  imgEnemies[0] = loadImage(Koji.config.images.enemyImage1)
+  imgEnemies[1] = loadImage(Koji.config.images.enemyImage2)
+  imgEnemies[2] = loadImage(Koji.config.images.enemyImage3)
+
   imgLife = loadImage(Koji.config.images.lifeIcon)
   soundImage = loadImage(Koji.config.images.soundImage)
   muteImage = loadImage(Koji.config.images.muteImage)
@@ -113,6 +128,8 @@ function preload() {
   if (Koji.config.sounds.explosion)
     sndExplosion = loadSound(Koji.config.sounds.explosion)
   if (Koji.config.sounds.life) sndLostLife = loadSound(Koji.config.sounds.life)
+  if (Koji.config.sounds.enemyDestroy)
+    sndBalloonShot = loadSound(Koji.config.sounds.enemyDestroy)
 
   // Load settings from Game Settings
   scoreGain = parseInt(Koji.config.strings.scoreGain)
@@ -132,7 +149,27 @@ function preload() {
 }
 
 // Instantiate objects here
-function instantiate() {}
+function instantiate() {
+  // Shooter
+  shooterRotateLimit = isMobileSize ? objSize * 3 : objSize * 7
+  shooter = new Shooter(
+    { x: width / 2, y: height - objSize * 2 },
+    { width: 2 * objSize, height: 4 * objSize },
+    {
+      shape: 'rectangle',
+      image: imgShooter,
+      color: { r: 255, g: 255, b: 255 },
+      rotate: true,
+    }
+  )
+
+  // Line of Control
+  lineOfControl = new Line(
+    { x: 0, y: height * 0.55 },
+    { x: width, y: height * 0.55 },
+    { color: '#ffffff', strokeWeight: 2, shape: 'line', alpha: 0.1 }
+  )
+}
 
 // Setup your props
 function setup() {
@@ -221,6 +258,12 @@ function cleanup() {
       floatingTexts.splice(i, 1)
     }
   }
+
+  for (let i = 0; i < bullets.length; i += 1) {
+    if (bullets[i].wentOutOfFrame()) {
+      bullets.splice(i, 1)
+    }
+  }
 }
 
 // Call this when a lose life event should trigger
@@ -271,6 +314,8 @@ function touchEnded() {
   }
 
   touching = false
+
+  if (!shooter.shooting && isMobile) shooter.shoot() // shoot when touch ended on mobile
 }
 
 // Key pressed and released
@@ -311,6 +356,16 @@ function keyPressed() {
 
 function keyReleased() {
   if (!gameOver && !gameBeginning) {
+    if (key === ' ' || keyCode === ENTER || keyCode === UP_ARROW) {
+      if (!shooter.shooting) shooter.shoot() // shoot by keys on desktop
+    }
+  }
+}
+
+// Mouse Clicked
+function mouseClicked() {
+  if (!gameOver && !gameBeginning) {
+    if (!shooter.shooting && !isMobile) shooter.shoot() // shoot by mouse click on desktop
   }
 }
 

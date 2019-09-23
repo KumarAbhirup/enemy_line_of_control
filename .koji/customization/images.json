@@ -1,5 +1,11 @@
 {
   "images": {
+    "shooterImage": "https://i.ibb.co/Kz2FK8X/shooter.png",
+    "enemyImage1": "https://i.ibb.co/fYdQ0wq/enemy1.png",
+    "enemyImage2": "https://i.ibb.co/t40xGc1/enemy2.png",
+    "enemyImage3": "https://i.ibb.co/gt39cnM/enemy3.png",
+    "bulletImage": "https://i.ibb.co/7rqSXVz/bullet.png",
+    "bombImage": "https://i.ibb.co/wct3jcJ/bomb.png",
     "soundImage": "https://i.imgur.com/rtFppa8.png",
     "muteImage": "https://i.imgur.com/AR7C733.png",
     "lifeIcon": "https://i.imgur.com/39e9e4h.png",
@@ -24,6 +30,36 @@
     "icon": "💪🏻",
     "source": "images.json",
     "fields": [{
+        "key": "shooterImage",
+        "name": "Shooter Image",
+        "description": "That's how the shooter looks",
+        "type": "image"
+      },
+      {
+        "key": "enemyImage1",
+        "name": "Enemy Image 1",
+        "description": "Enemy Type 1",
+        "type": "image"
+      },
+      {
+        "key": "enemyImage2",
+        "name": "Enemy Image 2",
+        "description": "Enemy Type 2",
+        "type": "image"
+      },
+      {
+        "key": "enemyImage3",
+        "name": "Enemy Image 3",
+        "description": "Enemy Type 3",
+        "type": "image"
+      },
+      {
+        "key": "bulletImage",
+        "name": "Bullet Image",
+        "description": "Ideal size: rectangular",
+        "type": "image"
+      },
+      {
         "key": "soundImage",
         "name": "Sound Icon",
         "description": "Ideal size: 32x32",
