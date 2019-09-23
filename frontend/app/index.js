@@ -25,6 +25,8 @@ let bullets = []
 
 // Game Stuffs (READ-N-WRITE)
 let shooterRotateLimit
+let enemySize
+let enemyTypes = []
 
 // Buttons
 let playButton
@@ -72,6 +74,9 @@ let gameTimerEnabled = false
 let gameOverRectangleHeight = 0 // for game over animation
 
 let canScore = false
+
+// Custom timers
+let spawnTimer
 
 // Size stuff
 let objSize // Base size modifier of all objects, calculated based on screen size
@@ -169,6 +174,28 @@ function instantiate() {
     { x: width, y: height * 0.55 },
     { color: '#ffffff', strokeWeight: 2, shape: 'line', alpha: 0.1 }
   )
+
+  // Enemy size
+  enemySize = isMobileSize ? 1 : 1.5
+
+  // Enemy types
+  enemyTypes = [
+    {
+      type: 0,
+      image: imgEnemies[0],
+      speed: 2,
+    },
+    {
+      type: 1,
+      image: imgEnemies[1],
+      speed: 2,
+    },
+    {
+      type: 2,
+      image: imgEnemies[2],
+      speed: 2,
+    },
+  ]
 }
 
 // Setup your props

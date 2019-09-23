@@ -11,7 +11,7 @@
     "lives": "4",
     "minimumScoreToSave": "2",
     "enableCursor": true,
-    "enableTimer": true,
+    "enableTimer": false,
     "gameTimer": "150",
     "playButtonText": "PLAY NOW",
     "leaderboardButtonText": "LEADERBOARD",

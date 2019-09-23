@@ -25,9 +25,20 @@ function gamePlay() {
 
   /* InGame UI */
 
-  // Show them all
+  // Show and update them all
   shooter.show()
+
   lineOfControl.show()
+
+  enemies.forEach(enemy => {
+    enemy.show()
+    enemy.update()
+  })
+
+  bullets.forEach(bullet => {
+    bullet.show()
+    bullet.update()
+  })
 
   // If the bullet is in the air, don't move the shooter
   if (!shooter.shooting) {
@@ -42,6 +53,33 @@ function gamePlay() {
       )
     )
   }
+
+  // Spawn enemies
+  ;(() => {
+    spawnTimer += 1 / frameRate()
+    if (spawnTimer >= 2) {
+      const enemyType = random(enemyTypes)
+
+      enemies.push(
+        // spawn enemy in between these x cordinates (shooterRotateLimit, width - shooterRotateLimit)
+        new Enemy(
+          {
+            x: random(shooterRotateLimit, width - shooterRotateLimit),
+            y: 0 - objSize * 2,
+          },
+          { radius: objSize * enemySize },
+          {
+            shape: 'circle',
+            image: enemyType.image,
+            rotate: true,
+            type: enemyType.type,
+          }
+        )
+      )
+
+      spawnTimer = 0
+    }
+  })()
 
   // Score draw
   const scoreX = width - objSize / 2

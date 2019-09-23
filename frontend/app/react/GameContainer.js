@@ -21,6 +21,7 @@ class GameContainer extends Component {
     require('script-loader!app/components/shooter.js')
     require('script-loader!app/components/line.js')
     require('script-loader!app/components/bullet.js')
+    require('script-loader!app/components/enemy.js')
 
     // Library
     require('script-loader!app/lib/clickable.js')
