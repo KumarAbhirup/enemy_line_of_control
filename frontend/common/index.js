@@ -13,7 +13,6 @@ import Koji from '@withkoji/vcc'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import Koji from '@withkoji/vcc'
 
 import App from '../app/react/App'
 
