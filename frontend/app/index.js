@@ -76,7 +76,7 @@ let gameOverRectangleHeight = 0 // for game over animation
 let canScore = false
 
 // Custom timers
-let spawnTimer
+let spawnTimer = 0
 
 // Size stuff
 let objSize // Base size modifier of all objects, calculated based on screen size
