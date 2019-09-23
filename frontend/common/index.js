@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable global-require */
 
 /**
  * common/index.js
@@ -9,23 +9,34 @@
  *   worker is registered.
  */
 import Koji from '@withkoji/vcc'
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
+import Koji from '@withkoji/vcc'
+
+import App from '../app/react/App'
+
 import './index.css'
+import './leaderboardStyles.css'
 
 Koji.pageLoad()
 window.Koji = Koji
 
-// Load p5 sketches here!
-require('script-loader!app/index.js')
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('p5Game')
+  )
+}
 
-new p5()
+render(App)
 
-// DO NOT TOUCH
+// in development, set up HMR:
 if (module.hot) {
-  module.hot.accept('script-loader!app/index.js', () => {
-    const oldCanvas = document.getElementsByTagName('canvas')[0]
-    oldCanvas.parentNode.removeChild(oldCanvas)
-
-    require('script-loader!app/index.js')
-    new p5()
+  module.hot.accept('../app/react/App', () => {
+    requestAnimationFrame(() => render(App))
   })
 }
