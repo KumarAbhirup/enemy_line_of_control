@@ -21,7 +21,7 @@ class Shooter extends GameObject {
           ),
           y: height - objSize * 1.6,
         },
-        { width: objSize * 2, height: objSize * 4, radius: objSize * 1 },
+        { radius: objSize * (isMobileSize ? 0.5 : 1) },
         { shape: 'circle', image: imgBullet, rotate: true }
       )
     )
