@@ -9,7 +9,13 @@ class Shooter extends GameObject {
    */
   shoot = () => {
     // this.shooting = true
-    bullets.push(new Bullet())
+    bullets.push(
+      new Bullet(
+        { x: shooter.body.position.x, y: shooter.body.position.y },
+        { width: objSize * 2, height: objSize * 4 },
+        { shape: 'rectangle', image: imgBullet, rotate: true }
+      )
+    )
   }
 
   // YOU MIGHT NOT NEED THIS FUNCTION! It is to bring another bullet after shooting one
