@@ -8,7 +8,7 @@ class Bullet extends GameObject {
   shooterRotation = shooter.body.angle - PI / 2
 
   update = () => {
-    this.velocity += 0.85
+    this.velocity += 0.65
 
     const direction = p5.Vector.fromAngle(this.shooterRotation)
     const position = createVector(
@@ -20,13 +20,13 @@ class Bullet extends GameObject {
     this.body.position.x = position.x
     this.body.position.y = position.y
 
-    particlesEffect(
-      imgBulletParticles,
-      {
-        x: this.body.position.x,
-        y: this.body.position.y,
-      },
-      isMobile ? 0.01 : 0.01
-    )
+    // particlesEffect(
+    //   imgBulletParticles,
+    //   {
+    //     x: this.body.position.x,
+    //     y: this.body.position.y,
+    //   },
+    //   isMobile ? 0.01 : 0.01
+    // )
   }
 }

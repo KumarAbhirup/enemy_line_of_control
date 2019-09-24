@@ -8,7 +8,7 @@
     "mobile_instructions1": "Shoot the enemies with the shooter!",
     "mobile_instructions2": "Don't let them touch the Line of Control",
     "mobile_instructions3": "Drag left/right and release off to shoot!",
-    "lives": "4",
+    "lives": "3",
     "minimumScoreToSave": "2",
     "enableCursor": true,
     "enableTimer": false,

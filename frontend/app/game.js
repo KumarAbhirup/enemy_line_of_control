@@ -26,6 +26,11 @@ function gamePlay() {
   /* InGame UI */
 
   // Show and update them all
+  bullets.forEach(bullet => {
+    bullet.show()
+    bullet.update()
+  })
+
   shooter.show()
 
   lineOfControl.show()
@@ -33,11 +38,6 @@ function gamePlay() {
   enemies.forEach(enemy => {
     enemy.show()
     enemy.update()
-  })
-
-  bullets.forEach(bullet => {
-    bullet.show()
-    bullet.update()
   })
 
   // If the bullet is in the air, don't move the shooter
@@ -56,7 +56,7 @@ function gamePlay() {
 
   // Spawn enemies
   spawnTimer += 1 / frameRate()
-  if (spawnTimer >= 2) {
+  if (spawnTimer >= 2 - score * 0.002) {
     const enemyType = random(enemyTypes)
 
     enemies.push(
@@ -94,7 +94,7 @@ function gamePlay() {
       enemy.removable = true
 
       particlesEffect(
-        imgLife,
+        imgBulletParticles,
         {
           x: enemy.body.position.x,
           y: enemy.body.position.y,
@@ -104,6 +104,28 @@ function gamePlay() {
 
       loseLife()
     }
+  })
+
+  // Enemy-Bullet collision
+  enemies.forEach((enemy, index) => {
+    bullets.forEach(bullet => {
+      if (
+        enemy.didTouch({ sizing: bullet.sizing, body: bullet.body }, 'circle')
+      ) {
+        enemy.removable = true
+
+        addScore(
+          1,
+          imgLife,
+          {
+            x: enemy.body.position.x,
+            y: enemy.body.position.y,
+          },
+          isMobile ? 10 : 20,
+          { floatingText: true }
+        )
+      }
+    })
   })
 
   // Score draw

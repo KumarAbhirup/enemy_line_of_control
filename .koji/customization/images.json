@@ -4,7 +4,7 @@
     "enemyImage1": "https://i.ibb.co/fYdQ0wq/enemy1.png",
     "enemyImage2": "https://i.ibb.co/t40xGc1/enemy2.png",
     "enemyImage3": "https://i.ibb.co/gt39cnM/enemy3.png",
-    "bulletImage": "https://i.ibb.co/7rqSXVz/bullet.png",
+    "bulletImage": "https://i.ibb.co/N7gR6cv/bullet.png",
     "bombImage": "https://i.ibb.co/wct3jcJ/bomb.png",
     "soundImage": "https://i.imgur.com/rtFppa8.png",
     "muteImage": "https://i.imgur.com/AR7C733.png",
@@ -12,7 +12,7 @@
     "background": "",
     "player": "https://i.imgur.com/uDTjMb3.png",
     "lifeCollectible": "https://i.imgur.com/XSNfW4m.png",
-    "explosion": "https://i.imgur.com/QT2LYN4.png",
+    "bulletParticles": "https://i.imgur.com/QT2LYN4.png",
     "shield": "https://i.imgur.com/uaLQlp1.png",
     "shieldCollectible": "https://i.imgur.com/uaLQlp1.png",
     "projectile": "https://i.imgur.com/BborCg2.png",
@@ -57,6 +57,12 @@
         "key": "bulletImage",
         "name": "Bullet Image",
         "description": "Ideal size: rectangular",
+        "type": "image"
+      },
+      {
+        "key": "bulletParticles",
+        "name": "Bullet Particles",
+        "description": "Ideal size: 32x32. The trails that bullet leaves before.",
         "type": "image"
       },
       {

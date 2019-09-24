@@ -113,7 +113,7 @@ function preload() {
   // Load images
   imgShooter = loadImage(Koji.config.images.shooterImage)
   imgBullet = loadImage(Koji.config.images.bulletImage)
-  imgBulletParticles = loadImage(Koji.config.images.explosion)
+  imgBulletParticles = loadImage(Koji.config.images.bulletParticles)
   imgEnemies[0] = loadImage(Koji.config.images.enemyImage1)
   imgEnemies[1] = loadImage(Koji.config.images.enemyImage2)
   imgEnemies[2] = loadImage(Koji.config.images.enemyImage3)
@@ -174,7 +174,7 @@ function instantiate() {
   lineOfControl = new Line(
     { x: 0, y: height * 0.55 },
     { x: width, y: height * 0.55 },
-    { color: '#ffffff', strokeWeight: 2, shape: 'line', alpha: 0.1 }
+    { color: '#ffffff', strokeWeight: 2, shape: 'line', alpha: 0.3 }
   )
 
   // Enemy size
@@ -185,17 +185,17 @@ function instantiate() {
     {
       type: 0,
       image: imgEnemies[0],
-      speed: objSize * 0.03,
+      speed: objSize * 0.04,
     },
     {
       type: 1,
       image: imgEnemies[1],
-      speed: objSize * 0.05,
+      speed: objSize * 0.06,
     },
     {
       type: 2,
       image: imgEnemies[2],
-      speed: objSize * 0.07,
+      speed: objSize * 0.08,
     },
   ]
 }
