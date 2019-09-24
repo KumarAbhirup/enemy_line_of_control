@@ -11,7 +11,17 @@ class Shooter extends GameObject {
     // this.shooting = true
     bullets.push(
       new Bullet(
-        { x: shooter.body.position.x, y: shooter.body.position.y },
+        {
+          x: map(
+            mouseX,
+            shooterRotateLimit,
+            width - shooterRotateLimit,
+            width / 2 + objSize * 0.05,
+            width / 2 - objSize * 0.05,
+            true
+          ),
+          y: height - objSize * 1.6,
+        },
         { width: objSize * 2, height: objSize * 4 },
         { shape: 'rectangle', image: imgBullet, rotate: true }
       )

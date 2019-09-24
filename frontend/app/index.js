@@ -47,6 +47,7 @@ let comboTexts = []
 // Images
 let imgShooter
 let imgBullet
+let imgBulletParticles
 let imgEnemies = []
 
 let imgLife
@@ -112,6 +113,7 @@ function preload() {
   // Load images
   imgShooter = loadImage(Koji.config.images.shooterImage)
   imgBullet = loadImage(Koji.config.images.bulletImage)
+  imgBulletParticles = loadImage(Koji.config.images.explosion)
   imgEnemies[0] = loadImage(Koji.config.images.enemyImage1)
   imgEnemies[1] = loadImage(Koji.config.images.enemyImage2)
   imgEnemies[2] = loadImage(Koji.config.images.enemyImage3)

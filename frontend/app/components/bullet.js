@@ -16,17 +16,17 @@ class Bullet extends GameObject {
       shooter.body.position.y + direction.y * (objSize * this.velocity)
     )
 
+    this.rotate(this.shooterRotation + PI / 2)
     this.body.position.x = position.x
     this.body.position.y = position.y
-    this.rotate(this.shooterRotation + PI / 2)
 
     particlesEffect(
-      imgLife,
+      imgBulletParticles,
       {
         x: this.body.position.x,
         y: this.body.position.y,
       },
-      isMobile ? 1 : 1
+      isMobile ? 0.01 : 0.01
     )
   }
 }
