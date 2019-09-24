@@ -102,6 +102,8 @@ function gamePlay() {
         isMobile ? 10 : 20
       )
 
+      sndLostLife.play(0, 1, 100)
+
       loseLife()
     }
   })
@@ -113,6 +115,8 @@ function gamePlay() {
         enemy.didTouch({ sizing: bullet.sizing, body: bullet.body }, 'circle')
       ) {
         enemy.removable = true
+
+        sndEnemyHit.play(0, 1, 100)
 
         addScore(
           1,

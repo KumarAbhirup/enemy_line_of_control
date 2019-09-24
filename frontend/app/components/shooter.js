@@ -8,7 +8,6 @@ class Shooter extends GameObject {
    * @description Running this function shoots the bullet.
    */
   shoot = () => {
-    // this.shooting = true
     bullets.push(
       new Bullet(
         {
@@ -26,10 +25,8 @@ class Shooter extends GameObject {
         { shape: 'circle', image: imgBullet, rotate: true }
       )
     )
-  }
 
-  // YOU MIGHT NOT NEED THIS FUNCTION! It is to bring another bullet after shooting one
-  reload = () => {
-    this.shooting = false
+    this.body.position.y -= 10
+    this.body.position.y += 10
   }
 }

@@ -136,7 +136,7 @@ function preload() {
     sndExplosion = loadSound(Koji.config.sounds.explosion)
   if (Koji.config.sounds.life) sndLostLife = loadSound(Koji.config.sounds.life)
   if (Koji.config.sounds.enemyDestroy)
-    sndBalloonShot = loadSound(Koji.config.sounds.enemyDestroy)
+    sndEnemyHit = loadSound(Koji.config.sounds.enemyHit)
 
   // Load settings from Game Settings
   scoreGain = parseInt(Koji.config.strings.scoreGain)
@@ -391,9 +391,9 @@ function keyPressed() {
 
 function keyReleased() {
   if (!gameOver && !gameBeginning) {
-    if (key === ' ' || keyCode === ENTER || keyCode === UP_ARROW) {
-      if (!shooter.shooting) shooter.shoot() // shoot by keys on desktop
-    }
+    // if (key === ' ' || keyCode === ENTER || keyCode === UP_ARROW) {
+    //   if (!shooter.shooting) shooter.shoot() // shoot by keys on desktop
+    // }
   }
 }
 
