@@ -291,6 +291,12 @@ function cleanup() {
       bullets.splice(i, 1)
     }
   }
+
+  for (let i = 0; i < enemies.length; i += 1) {
+    if (enemies[i].removable) {
+      enemies.splice(i, 1)
+    }
+  }
 }
 
 // Call this when a lose life event should trigger
@@ -415,6 +421,8 @@ function init() {
 
   // Keep everyone at their original place
   instantiate()
+  enemies = []
+  bullets = []
 
   floatingTexts.push(
     new OldFloatingText(

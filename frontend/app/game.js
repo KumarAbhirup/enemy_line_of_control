@@ -79,6 +79,32 @@ function gamePlay() {
     spawnTimer = 0
   }
 
+  // Enemy-Line collision
+  enemies.forEach(enemy => {
+    if (
+      lineOfControl.didTouch(
+        {
+          sizing: { radius: enemy.sizing.radius },
+          body: enemy.body,
+        },
+        'circle'
+      )
+    ) {
+      enemy.removable = true
+
+      particlesEffect(
+        imgLife,
+        {
+          x: enemy.body.position.x,
+          y: enemy.body.position.y,
+        },
+        isMobile ? 10 : 20
+      )
+
+      loseLife()
+    }
+  })
+
   // Score draw
   const scoreX = width - objSize / 2
   const scoreY = objSize / 3
