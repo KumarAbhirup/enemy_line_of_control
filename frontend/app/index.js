@@ -183,17 +183,17 @@ function instantiate() {
     {
       type: 0,
       image: imgEnemies[0],
-      speed: 2,
+      speed: objSize * 0.03,
     },
     {
       type: 1,
       image: imgEnemies[1],
-      speed: 2,
+      speed: objSize * 0.05,
     },
     {
       type: 2,
       image: imgEnemies[2],
-      speed: 2,
+      speed: objSize * 0.07,
     },
   ]
 }

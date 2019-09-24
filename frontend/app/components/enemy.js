@@ -5,6 +5,6 @@
 class Enemy extends GameObject {
   update = () => {
     // Move the enemy forward!
-    this.body.position.y += objSize * 0.05
+    this.body.position.y += this.settings.speed
   }
 }

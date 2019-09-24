@@ -72,6 +72,7 @@ function gamePlay() {
           image: enemyType.image,
           rotate: true,
           type: enemyType.type,
+          speed: enemyType.speed,
         }
       )
     )
