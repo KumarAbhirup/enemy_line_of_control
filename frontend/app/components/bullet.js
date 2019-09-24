@@ -28,5 +28,7 @@ class Bullet extends GameObject {
       },
       isMobile ? 0 : 0.000001
     )
+
+    !isMobile ? sndExplosion.play(0, 1, 0.01) : null
   }
 }

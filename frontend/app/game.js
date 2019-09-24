@@ -94,7 +94,7 @@ function gamePlay() {
       enemy.removable = true
 
       addScore(
-        -10,
+        -3,
         imgBulletParticles,
         {
           x: enemy.body.position.x,

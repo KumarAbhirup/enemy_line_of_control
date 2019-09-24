@@ -283,8 +283,8 @@ function cleanup() {
   }
 
   for (let i = 0; i < particles.length; i += 1) {
-    if (particles.removable) {
-      floatingTexts.splice(i, 1)
+    if (particles[i].removable) {
+      particles.splice(i, 1)
     }
   }
 
