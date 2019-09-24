@@ -56,7 +56,7 @@ function gamePlay() {
 
   // Spawn enemies
   spawnTimer += 1 / frameRate()
-  if (spawnTimer >= 2 - score * 0.002) {
+  if (spawnTimer >= 1.25) {
     const enemyType = random(enemyTypes)
 
     enemies.push(
@@ -93,18 +93,24 @@ function gamePlay() {
     ) {
       enemy.removable = true
 
-      particlesEffect(
+      addScore(
+        -10,
         imgBulletParticles,
         {
           x: enemy.body.position.x,
           y: enemy.body.position.y,
         },
-        isMobile ? 10 : 20
+        isMobile ? 5 : 15,
+        { floatingText: true }
       )
 
       sndLostLife.play(0, 1, 100)
 
-      loseLife()
+      if (lives === 1) {
+        setTimeout(loseLife, 1000)
+      } else {
+        loseLife()
+      }
     }
   })
 
@@ -125,7 +131,7 @@ function gamePlay() {
             x: enemy.body.position.x,
             y: enemy.body.position.y,
           },
-          isMobile ? 10 : 20,
+          isMobile ? 5 : 15,
           { floatingText: true }
         )
       }
