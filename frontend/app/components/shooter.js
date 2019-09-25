@@ -21,10 +21,12 @@ class Shooter extends GameObject {
           ),
           y: height - objSize * 1.6,
         },
-        { radius: objSize * (isMobileSize ? 0.5 : 1) },
+        { radius: objSize * (isMobileSize ? 0.65 : 1) },
         { shape: 'circle', image: imgBullet, rotate: true }
       )
     )
+
+    // isMobile ? (bullets[1] = null) : null
 
     this.body.position.y -= 10
     this.body.position.y += 10

@@ -5,6 +5,8 @@
 class Bullet extends GameObject {
   velocity = 0
 
+  didCollide = false
+
   shooterRotation = shooter.body.angle - PI / 2
 
   update = () => {

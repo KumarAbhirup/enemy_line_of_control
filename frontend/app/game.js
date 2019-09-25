@@ -121,6 +121,7 @@ function gamePlay() {
         enemy.didTouch({ sizing: bullet.sizing, body: bullet.body }, 'circle')
       ) {
         enemy.removable = true
+        bullet.didCollide = true
 
         sndEnemyHit.play(0, 1, 100)
 
@@ -137,6 +138,33 @@ function gamePlay() {
       }
     })
   })
+
+  bullets.forEach((bullet, index) => {
+    if (bullet.wentOutOfFrame()) {
+      if (!bullet.didCollide) {
+        sndLostLife.play(0, 1, 100)
+        loseLife()
+      }
+
+      bullets.splice(index, 1)
+    }
+  })
+
+  // console.log(bullets)
+
+  // Mobile touch timer
+  // if (isTouchEnded) {
+  // touchTimer += 1 / frameRate()
+  // if (touchTimer <= 1) {
+  //   isTouchEnded = false
+  //   touchTimer = 0
+  //   if (!isTouchEnded && !shooter.shooting && isMobile) shooter.shoot() // shoot when touch ended on mobile
+  // }
+  // // }
+
+  // if (!isTouchEnded) {
+  //   if (!shooter.shooting && isMobile) shooter.shoot() // shoot when touch ended on mobile
+  // }
 
   // Score draw
   const scoreX = width - objSize / 2

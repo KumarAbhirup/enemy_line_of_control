@@ -94,6 +94,7 @@ const gameSize = 18
 let isMobile = false // check if it really is mobile
 let isMobileSize = false // check if the browser is mobile size
 let touching = false // Whether the user is currently touching/clicking
+let isTouchEnded = false
 
 // Load assets
 function preload() {
@@ -289,12 +290,6 @@ function cleanup() {
     }
   }
 
-  for (let i = 0; i < bullets.length; i += 1) {
-    if (bullets[i].wentOutOfFrame()) {
-      bullets.splice(i, 1)
-    }
-  }
-
   for (let i = 0; i < enemies.length; i += 1) {
     if (enemies[i].removable) {
       enemies.splice(i, 1)
@@ -330,6 +325,7 @@ function touchStarted() {
   if (!gameOver && !gameBeginning) {
     // InGame
     touching = true
+    isTouchEnded = false
 
     if (canEnd) {
       gameOver = true
@@ -351,7 +347,7 @@ function touchEnded() {
 
   touching = false
 
-  if (!shooter.shooting && isMobile) shooter.shoot() // shoot when touch ended on mobile
+  if (gameStart && !shooter.shooting && isMobile) shooter.shoot() // shoot when touch ended on mobile
 }
 
 // Key pressed and released
@@ -401,7 +397,7 @@ function keyReleased() {
 // Mouse Clicked
 function mouseClicked() {
   if (!gameOver && !gameBeginning) {
-    if (!shooter.shooting && !isMobile) shooter.shoot() // shoot by mouse click on desktop
+    if (gameStart && !shooter.shooting && !isMobile) shooter.shoot() // shoot by mouse click on desktop
   }
 }
 
@@ -440,6 +436,7 @@ function init() {
 
   canScore = false
   canEnd = false
+  gameStart = false
 
   // set score to zero if score increases mistakenly
   setTimeout(() => {
