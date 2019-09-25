@@ -8,7 +8,7 @@
     "mobile_instructions1": "Shoot the enemies with the shooter!",
     "mobile_instructions2": "Don't let them touch the Line of Control",
     "mobile_instructions3": "Drag left/right and release off to shoot!",
-    "lives": "3",
+    "lives": "5",
     "minimumScoreToSave": "2",
     "enableCursor": true,
     "enableTimer": false,
@@ -18,6 +18,7 @@
     "endButtonText": "END GAME",
     "gameOverText": "GAME OVER",
     "gameStartedFloatingText": "They're incoming. Shoot!",
+    "bulletWastedFloatingText": "You wasted a bullet!",
     "comboText": "AWESOME 👏, NEAT 👌, GREAT 👏, FANTASTIC 💌, WOW ❤️, AMAZING 😍",
     "emailInputEnabled": false,
     "scoreText": "Score:",
@@ -129,6 +130,12 @@
         "key": "gameStartedFloatingText",
         "name": "Game Started Text",
         "description": "The floating text that appears after game starts.",
+        "type": "text"
+      },
+      {
+        "key": "bulletWastedFloatingText",
+        "name": "Bullet Wasted Text",
+        "description": "The floating text that appears after wasting a bullet.",
         "type": "text"
       },
       {

@@ -143,28 +143,24 @@ function gamePlay() {
     if (bullet.wentOutOfFrame()) {
       if (!bullet.didCollide) {
         sndLostLife.play(0, 1, 100)
+
+        floatingTexts.push(
+          new OldFloatingText(
+            width / 2,
+            height / 2 - height * 0.01,
+            Koji.config.strings.bulletWastedFloatingText,
+            Koji.config.colors.floatingTextColor,
+            objSize * 1.2,
+            2
+          )
+        )
+
         loseLife()
       }
 
       bullets.splice(index, 1)
     }
   })
-
-  // console.log(bullets)
-
-  // Mobile touch timer
-  // if (isTouchEnded) {
-  // touchTimer += 1 / frameRate()
-  // if (touchTimer <= 1) {
-  //   isTouchEnded = false
-  //   touchTimer = 0
-  //   if (!isTouchEnded && !shooter.shooting && isMobile) shooter.shoot() // shoot when touch ended on mobile
-  // }
-  // // }
-
-  // if (!isTouchEnded) {
-  //   if (!shooter.shooting && isMobile) shooter.shoot() // shoot when touch ended on mobile
-  // }
 
   // Score draw
   const scoreX = width - objSize / 2

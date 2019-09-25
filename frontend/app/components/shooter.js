@@ -26,8 +26,6 @@ class Shooter extends GameObject {
       )
     )
 
-    // isMobile ? (bullets[1] = null) : null
-
     this.body.position.y -= 10
     this.body.position.y += 10
   }

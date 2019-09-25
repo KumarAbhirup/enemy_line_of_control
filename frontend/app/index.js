@@ -348,6 +348,8 @@ function touchEnded() {
   touching = false
 
   if (gameStart && !shooter.shooting && isMobile) shooter.shoot() // shoot when touch ended on mobile
+
+  return false
 }
 
 // Key pressed and released
