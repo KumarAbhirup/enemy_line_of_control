@@ -125,6 +125,20 @@ function gamePlay() {
 
         sndEnemyHit.play(0, 1, 100)
 
+        // eslint-disable-next-line no-unused-expressions
+        !isMobile
+          ? floatingTexts.push(
+              new FloatingText(
+                random(0, width),
+                height - height * 0.1,
+                random(comboTexts),
+                Koji.config.colors.negativeFloatingTextColor,
+                objSize,
+                2
+              )
+            )
+          : null
+
         addScore(
           1,
           imgLife,
@@ -151,7 +165,7 @@ function gamePlay() {
             Koji.config.strings.bulletWastedFloatingText,
             Koji.config.colors.floatingTextColor,
             objSize * 1.2,
-            2
+            0.8
           )
         )
 
