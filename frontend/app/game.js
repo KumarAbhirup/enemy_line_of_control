@@ -188,7 +188,7 @@ function gamePlay() {
   const lifeSize = objSize
   for (let i = 0; i < lives; i += 1) {
     image(
-      imgLife,
+      imgBulletLife,
       lifeSize / 2 + lifeSize * i,
       lifeSize / 2,
       lifeSize,

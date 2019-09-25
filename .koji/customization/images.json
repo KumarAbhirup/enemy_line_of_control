@@ -8,6 +8,7 @@
     "bombImage": "https://i.ibb.co/wct3jcJ/bomb.png",
     "soundImage": "https://i.imgur.com/rtFppa8.png",
     "muteImage": "https://i.imgur.com/AR7C733.png",
+    "bulletLifeIcon": "https://i.ibb.co/c2KwjDy/bullet.png",
     "lifeIcon": "https://i.imgur.com/39e9e4h.png",
     "background": "",
     "player": "https://i.imgur.com/uDTjMb3.png",
@@ -81,6 +82,12 @@
         "key": "lifeIcon",
         "name": "Life Icon",
         "description": "Ideal size: 96x96",
+        "type": "image"
+      },
+      {
+        "key": "bulletLifeIcon",
+        "name": "Bullet Life Icon",
+        "description": "Ideal size: 96x96... comes in top left corner.",
         "type": "image"
       },
       {

@@ -51,6 +51,7 @@ let imgBulletParticles
 let imgEnemies = []
 
 let imgLife
+let imgBulletLife
 let imgBackground
 
 // Audio
@@ -121,6 +122,7 @@ function preload() {
   imgEnemies[2] = loadImage(Koji.config.images.enemyImage3)
 
   imgLife = loadImage(Koji.config.images.lifeIcon)
+  imgBulletLife = loadImage(Koji.config.images.bulletLifeIcon)
   soundImage = loadImage(Koji.config.images.soundImage)
   muteImage = loadImage(Koji.config.images.muteImage)
 
