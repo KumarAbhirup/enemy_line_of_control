@@ -20,14 +20,16 @@ class Bullet extends GameObject {
     this.body.position.x = position.x
     this.body.position.y = position.y
 
-    particlesEffect(
-      imgBulletParticles,
-      {
-        x: this.body.position.x,
-        y: this.body.position.y,
-      },
-      isMobile ? 0 : 0.000001
-    )
+    !isMobile
+      ? particlesEffect(
+          imgBulletParticles,
+          {
+            x: this.body.position.x,
+            y: this.body.position.y,
+          },
+          0.000001
+        )
+      : null
 
     !isMobile ? sndExplosion.play(0, 1, 0.01) : null
   }

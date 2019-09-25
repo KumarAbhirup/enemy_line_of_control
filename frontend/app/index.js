@@ -78,6 +78,7 @@ let canScore = false
 
 // Custom timers
 let spawnTimer = 0
+let touchTimer = 0
 
 // Size stuff
 let objSize // Base size modifier of all objects, calculated based on screen size
