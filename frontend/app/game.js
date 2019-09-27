@@ -59,6 +59,10 @@ function gamePlay() {
   if (spawnTimer >= 1.25) {
     const enemyType = random(enemyTypes)
 
+    if (score > 8) {
+      enemyType.speed *= 1.3
+    }
+
     enemies.push(
       // spawn enemy in between these x cordinates (shooterRotateLimit, width - shooterRotateLimit)
       new Enemy(
